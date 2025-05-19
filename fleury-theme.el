@@ -5,7 +5,7 @@
 
 ;; Author    : Shams Parvez Arka <parvez6826@gmail.com>
 ;; URL       : https://github.com/ShamsParvezArka/fleury-theme.el
-;; Version   : 0.1
+;; Version   : 0.2
 ;; Commentary: "Coming up with an original idea in 21st century
 ;;             is tough, even my dreams aren't original anymore!"
 
@@ -33,6 +33,7 @@
       (sky-blue-lite      "#2f2f38")
       (bright-red         "#ff0000")
       (fresh-green        "#2ab34f")
+      (lime-green         "#002928")
       (vivid-vermilion    "#f0500c")
       (golden-yellow      "#f0bb0c")
       (pure-black         "#000000")
@@ -46,8 +47,8 @@
 
    ;; UI Elements
    `(default ((t (:background ,rich-black :foreground ,light-bronze))))
-   `(cursor ((t (:background ,lime-green))))
-   `(region ((t (:background ,sky-blue-lite))))
+   `(cursor ((t (:background ,fresh-green))))
+   `(region ((t (:background ,lime-green))))
    `(highlight ((t (:background ,charcoal-gray-lite))))
    `(fringe ((t (:background ,dark-slate))))
    `(vertical-border ((t (:foreground ,dark-slate))))
