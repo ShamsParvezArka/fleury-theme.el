@@ -5,7 +5,7 @@
 
 ;; Author    : Shams Parvez Arka <parvez6826@gmail.com>
 ;; URL       : https://github.com/ShamsParvezArka/fleury-theme.el
-;; Version   : 0.2
+;; Version   : 0.3
 ;; Commentary: "Coming up with an original idea in 21st century
 ;;             is tough, even my dreams aren't original anymore!"
 
