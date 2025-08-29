@@ -5,7 +5,7 @@
 
 ;; Author    : Shams Parvez Arka <parvez6826@gmail.com>
 ;; URL       : https://github.com/ShamsParvezArka/fleury-theme.el
-;; Version   : 0.3
+;; Version   : 0.4
 ;; Commentary: "Coming up with an original idea in 21st century
 ;;             is tough, even my dreams aren't original anymore!"
 
@@ -15,7 +15,6 @@
 ;; Color palette
 (let ((rich-black         "#020202")
       (light-bronze       "#b99468")
-      (lime-green         "#003a3a")
       (charcoal-gray      "#212121")
       (charcoal-gray-lite "#1e1e1e")
       (gunmetal-blue      "#303040")
@@ -32,8 +31,8 @@
       (sky-blue           "#2895c7")
       (sky-blue-lite      "#2f2f38")
       (bright-red         "#ff0000")
-      (fresh-green        "#2ab34f")
-      (lime-green         "#002928")
+      (fresh-green        "#66bc11")
+      (lime-green         "#003939")      
       (vivid-vermilion    "#f0500c")
       (golden-yellow      "#f0bb0c")
       (pure-black         "#000000")
