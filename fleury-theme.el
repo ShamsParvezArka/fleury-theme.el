@@ -5,7 +5,7 @@
 
 ;; Author    : Shams Parvez Arka <parvez6826@gmail.com>
 ;; URL       : https://github.com/ShamsParvezArka/fleury-theme.el
-;; Version   : 0.4
+;; Version   : 0.5
 ;; Commentary: "Coming up with an original idea in 21st century
 ;;             is tough, even my dreams aren't original anymore!"
 
@@ -39,6 +39,10 @@
       (aqua-ice           "#8ffff2")
       (dusty-sage         "#9ba290")
       (coffee-brown       "#63523d")
+      
+      (mode-line-foreground-active "#e7aa4d")
+      (mode-line-background-active "#1a120b")
+      (mode-line-border            "#161616")
       )
 
   (custom-theme-set-faces
@@ -63,16 +67,22 @@
    `(font-lock-string-face ((t (:foreground ,bright-orange))))
    `(font-lock-constant-face ((t (:foreground ,bright-orange))))
    `(font-lock-builtin-face ((t (:foreground ,dusty-rose))))
+   `(font-lock-preprocessor-face ((t (:foreground,dusty-rose))))
    `(font-lock-type-face ((t (:foreground ,sunflower-yellow))))
    `(font-lock-function-name-face ((t (:foreground ,burnt-orange))))
-   `(font-lock-variable-name-face ((t (:foreground ,sky-blue))))
+   `(font-lock-variable-name-face ((t (:foreground ,light-bronze))))
+   `(font-lock-variable-use-face ((t (:foreground ,sky-blue))))   
    `(font-lock-preprocessor-face ((t (:foreground ,dusty-rose))))
    `(font-lock-warning-face ((t (:foreground ,bright-red :weight bold))))
    `(font-lock-doc-face ((t (:foreground ,fresh-green))))
 
    ;; Mode Line
-   `(mode-line ((t (:background ,dark-slate :foreground ,light-bronze :box nil))))
-   `(mode-line-inactive ((t (:background ,jet-black :foreground ,medium-gray :box nil))))
+   `(mode-line ((t (:background ,mode-line-background-active
+                                :foreground ,mode-line-foreground-active
+                                :box (:line-width 1 :color ,mode-line-border :style nil)))))
+   `(mode-line-inactive ((t (:background ,rich-black
+                                         :foreground ,mode-line-foreground-active
+                                         :box (:line-width 1 :color ,mode-line-border :style nil)))))
 
    ;; Search
    `(isearch ((t (:background ,vivid-vermilion :foreground ,pure-black))))
@@ -103,8 +113,15 @@
                                            :inherit 'unspecified))))
    ))
 
-(add-hook 'prog-mode-hook #'hl-line-mode)
-;; (setq-default cursor-type '(bar . 3))
+(add-hook 'prog-mode-hook 'hl-line-mode)
+(setq-default cursor-type 'box)
+(defun custom/update-cursor-type ()
+  (setq cursor-type
+        (if (derived-mode-p 'prog-mode 'text-mode)
+            '(bar . 2)  
+          'box)))
+(add-hook 'post-command-hook 'custom/update-cursor-type)
+
 (provide-theme 'fleury)
 
 
