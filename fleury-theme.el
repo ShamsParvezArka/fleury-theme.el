@@ -49,68 +49,58 @@
    'fleury
 
    ;; UI Elements
-   `(default ((t (:background ,rich-black :foreground ,light-bronze))))
-   `(cursor ((t (:background ,fresh-green))))
-   `(region ((t (:background ,lime-green))))
-   `(highlight ((t (:background ,charcoal-gray-lite))))
-   `(fringe ((t (:background ,dark-slate))))
-   `(vertical-border ((t (:foreground ,dark-slate))))
+   `(default           ((t (:background ,rich-black :foreground ,light-bronze))))
+   `(cursor            ((t (:background ,fresh-green))))
+   `(region            ((t (:background ,lime-green))))
+   `(highlight         ((t (:background ,charcoal-gray-lite))))
+   `(fringe            ((t (:background ,dark-slate))))
+   `(vertical-border   ((t (:foreground ,dark-slate))))
    `(minibuffer-prompt ((t (:foreground ,amber-gold :weight bold))))
 
    ;; Line Numbers
-   `(line-number ((t (:foreground ,medium-gray :background ,rich-black))))
+   `(line-number              ((t (:foreground ,medium-gray        :background ,rich-black))))
    `(line-number-current-line ((t (:background ,charcoal-gray-lite :foreground ,light-bronze))))
 
    ;; Font Lock Faces
-   `(font-lock-comment-face ((t (:foreground ,dim-gray))))
-   `(font-lock-keyword-face ((t (:foreground ,goldenrod))))
-   `(font-lock-string-face ((t (:foreground ,bright-orange))))
-   `(font-lock-constant-face ((t (:foreground ,bright-orange))))
-   `(font-lock-builtin-face ((t (:foreground ,dusty-rose))))
-   `(font-lock-preprocessor-face ((t (:foreground,dusty-rose))))
-   `(font-lock-type-face ((t (:foreground ,sunflower-yellow))))
+   `(font-lock-comment-face       ((t (:foreground ,dim-gray))))
+   `(font-lock-keyword-face       ((t (:foreground ,goldenrod))))
+   `(font-lock-string-face        ((t (:foreground ,bright-orange))))
+   `(font-lock-constant-face      ((t (:foreground ,bright-orange))))
+   `(font-lock-builtin-face       ((t (:foreground ,dusty-rose))))
+   `(font-lock-preprocessor-face  ((t (:foreground,dusty-rose))))
+   `(font-lock-type-face          ((t (:foreground ,sunflower-yellow))))
    `(font-lock-function-name-face ((t (:foreground ,burnt-orange))))
    `(font-lock-variable-name-face ((t (:foreground ,light-bronze))))
-   `(font-lock-variable-use-face ((t (:foreground ,sky-blue))))   
-   `(font-lock-preprocessor-face ((t (:foreground ,dusty-rose))))
-   `(font-lock-warning-face ((t (:foreground ,bright-red :weight bold))))
-   `(font-lock-doc-face ((t (:foreground ,fresh-green))))
+   `(font-lock-variable-use-face  ((t (:foreground ,sky-blue))))   
+   `(font-lock-preprocessor-face  ((t (:foreground ,dusty-rose))))
+   `(font-lock-warning-face       ((t (:foreground ,bright-red :weight bold))))
+   `(font-lock-doc-face           ((t (:foreground ,fresh-green))))
 
    ;; Mode Line
-   `(mode-line ((t (:background ,mode-line-background-active
-                                :foreground ,mode-line-foreground-active
-                                :box (:line-width 1 :color ,mode-line-border :style nil)))))
-   `(mode-line-inactive ((t (:background ,rich-black
-                                         :foreground ,mode-line-foreground-active
-                                         :box (:line-width 1 :color ,mode-line-border :style nil)))))
+   `(mode-line          ((t (:background ,mode-line-background-active :foreground ,mode-line-foreground-active :box (:line-width 1 :color ,mode-line-border :style nil)))))
+   `(mode-line-inactive ((t (:background ,rich-black                  :foreground ,mode-line-foreground-active :box (:line-width 1 :color ,mode-line-border :style nil)))))
 
-   ;; Search
-   `(isearch ((t (:background ,vivid-vermilion :foreground ,pure-black))))
-   `(lazy-highlight ((t (:background ,golden-yellow :foreground ,pure-black))))
-
+   ;; Search & String Matching
+   `(match           ((t (:background ,golden-yellow   :foreground ,pure-black))))      
+   `(isearch         ((t (:background ,vivid-vermilion :foreground ,pure-black))))
+   `(lazy-highlight  ((t (:background ,golden-yellow   :foreground ,pure-black))))
+   `(ido-first-match ((t (:foreground ,golden-yellow))))
+   `(ido-only-match  ((t (:foreground ,vivid-vermilion))))
+   
    ;; Custom Elements
-   `(show-paren-match ((t (:background ,sky-blue-lite))))
+   `(show-paren-match    ((t (:background ,sky-blue-lite))))
    `(show-paren-mismatch ((t (:background ,dusty-sage))))
 
    ;; Tooltip and Popup
    `(tooltip ((t (:background ,coffee-brown :foreground ,amber-gold))))
 
    ;; Compilation
-   `(flycheck-error ((t (:underline (:color ,bright-red :style wave)))))
-
-   
-   `(compilation-info ((t ,(list :foreground fresh-green
-                                 :inherit 'unspecified))))
-   `(compilation-warning ((t ,(list :foreground coffee-brown
-                                    :bold t
-                                    :inherit 'unspecified))))
-   `(compilation-error ((t (:foreground ,bright-red))))
-   `(compilation-mode-line-fail ((t ,(list :foreground bright-red
-                                           :weight 'bold
-                                           :inherit 'unspecified))))
-   `(compilation-mode-line-exit ((t ,(list :foreground fresh-green
-                                           :weight 'bold
-                                           :inherit 'unspecified))))
+   `(flycheck-error             ((t (:underline (:color ,bright-red :style wave)))))
+   `(compilation-error          ((t (:foreground ,bright-red))))
+   `(compilation-info           ((t ,(list :foreground fresh-green  :inherit 'unspecified))))
+   `(compilation-warning        ((t ,(list :foreground coffee-brown :bold t       :inherit 'unspecified))))
+   `(compilation-mode-line-fail ((t ,(list :foreground bright-red   :weight 'bold :inherit 'unspecified))))
+   `(compilation-mode-line-exit ((t ,(list :foreground fresh-green  :weight 'bold :inherit 'unspecified))))
    ))
 
 (add-hook 'prog-mode-hook 'hl-line-mode)
@@ -118,7 +108,7 @@
 (defun custom/update-cursor-type ()
   (setq cursor-type
         (if (derived-mode-p 'prog-mode 'text-mode)
-            '(bar . 2)  
+            '(bar . 2)
           'box)))
 (add-hook 'post-command-hook 'custom/update-cursor-type)
 
