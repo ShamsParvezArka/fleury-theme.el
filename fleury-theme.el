@@ -104,11 +104,12 @@
    ))
 
 (add-hook 'prog-mode-hook 'hl-line-mode)
+(setq-default cursor-in-non-selected-windows nil)
 (setq-default cursor-type 'box)
 (defun custom/update-cursor-type ()
   (setq cursor-type
         (if (derived-mode-p 'prog-mode 'text-mode)
-            '(bar . 2)
+            '(bar . 4)
           'box)))
 (add-hook 'post-command-hook 'custom/update-cursor-type)
 
