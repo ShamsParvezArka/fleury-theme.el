@@ -42,8 +42,7 @@
       
       (mode-line-foreground-active "#e7aa4d")
       (mode-line-background-active "#1a120b")
-      (mode-line-border            "#161616")
-      )
+      (mode-line-border            "#161616"))
 
   (custom-theme-set-faces
    'fleury
@@ -92,7 +91,7 @@
    `(show-paren-mismatch ((t (:background ,dusty-sage))))
 
    ;; Tooltip and Popup
-   `(tooltip ((t (:background ,coffee-brown :foreground ,amber-gold))))
+  `(tooltip ((t (:background ,coffee-brown :foreground ,amber-gold))))
 
    ;; Compilation
    `(flycheck-error             ((t (:underline (:color ,bright-red :style wave)))))
@@ -101,17 +100,13 @@
    `(compilation-warning        ((t ,(list :foreground coffee-brown :bold t       :inherit 'unspecified))))
    `(compilation-mode-line-fail ((t ,(list :foreground bright-red   :weight 'bold :inherit 'unspecified))))
    `(compilation-mode-line-exit ((t ,(list :foreground fresh-green  :weight 'bold :inherit 'unspecified))))
-   ))
+    
+   ;; Header line
+   `(header-line ((t (:background ,mode-line-background-active :foreground ,mode-line-foreground-active))))
 
-(add-hook 'prog-mode-hook 'hl-line-mode)
-(setq-default cursor-in-non-selected-windows nil)
-(setq-default cursor-type 'box)
-(defun custom/update-cursor-type ()
-  (setq cursor-type
-        (if (derived-mode-p 'prog-mode 'text-mode)
-            '(bar . 4)
-          'box)))
-(add-hook 'post-command-hook 'custom/update-cursor-type)
+   ;; Window divider
+   `(window-divider ((t (:background ,light-bronze :foreground ,light-bronze))))
+   ))
 
 (provide-theme 'fleury)
 
