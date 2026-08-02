@@ -5,7 +5,7 @@
 
 ;; Author    : Shams Parvez Arka <parvez6826@gmail.com>
 ;; URL       : https://github.com/ShamsParvezArka/fleury-theme.el
-;; Version   : 0.5
+;; Version   : 0.6
 ;; Commentary: "Coming up with an original idea in 21st century
 ;;             is tough, even my dreams aren't original anymore!"
 
@@ -113,7 +113,7 @@
 
 ;; MIT License
 
-;; Copyright (c) 2025 Shams Parvez Arka
+;; Copyright (c) 2025-2026 Shams Parvez Arka
 
 ;; Permission is hereby granted, free of charge, to any person obtaining a copy
 ;; of this software and associated documentation files (the "Software"), to deal
