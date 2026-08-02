@@ -1,6 +1,6 @@
 ;;; fleury-theme.el --- The fleury color theme
 
-;; Copyright (C) 2025 Shams Parvez Arka
+;; Copyright (C) 2025-2026 Shams Parvez Arka
 ;; See end of file for extended copyright information
 
 ;; Author    : Shams Parvez Arka <parvez6826@gmail.com>
@@ -13,10 +13,10 @@
 (deftheme fleury "The fleury color theme")
 
 ;; Color palette
-(let ((rich-black         "#020202")
+(let ((rich-black         "#0c0c0c")
       (light-bronze       "#b99468")
       (charcoal-gray      "#212121")
-      (charcoal-gray-lite "#1e1e1e")
+      (charcoal-gray-lite "#1f1f26")
       (gunmetal-blue      "#303040")
       (dark-slate         "#222425")
       (amber-gold         "#fcaa05")
@@ -32,14 +32,14 @@
       (sky-blue-lite      "#2f2f38")
       (bright-red         "#ff0000")
       (fresh-green        "#66bc11")
-      (lime-green         "#003939")      
+      (lime-green         "#003939")
       (vivid-vermilion    "#f0500c")
       (golden-yellow      "#f0bb0c")
       (pure-black         "#000000")
       (aqua-ice           "#8ffff2")
       (dusty-sage         "#9ba290")
       (coffee-brown       "#63523d")
-      
+
       (mode-line-foreground-active "#e7aa4d")
       (mode-line-background-active "#1a120b")
       (mode-line-border            "#161616"))
@@ -70,7 +70,7 @@
    `(font-lock-type-face          ((t (:foreground ,sunflower-yellow))))
    `(font-lock-function-name-face ((t (:foreground ,burnt-orange))))
    `(font-lock-variable-name-face ((t (:foreground ,light-bronze))))
-   `(font-lock-variable-use-face  ((t (:foreground ,sky-blue))))   
+   `(font-lock-variable-use-face  ((t (:foreground ,sky-blue))))
    `(font-lock-preprocessor-face  ((t (:foreground ,dusty-rose))))
    `(font-lock-warning-face       ((t (:foreground ,bright-red :weight bold))))
    `(font-lock-doc-face           ((t (:foreground ,fresh-green))))
@@ -80,12 +80,12 @@
    `(mode-line-inactive ((t (:background ,rich-black                  :foreground ,mode-line-foreground-active :box (:line-width 1 :color ,mode-line-border :style nil)))))
 
    ;; Search & String Matching
-   `(match           ((t (:background ,golden-yellow   :foreground ,pure-black))))      
+   `(match           ((t (:background ,golden-yellow   :foreground ,pure-black))))
    `(isearch         ((t (:background ,vivid-vermilion :foreground ,pure-black))))
    `(lazy-highlight  ((t (:background ,golden-yellow   :foreground ,pure-black))))
    `(ido-first-match ((t (:foreground ,golden-yellow))))
    `(ido-only-match  ((t (:foreground ,vivid-vermilion))))
-   
+
    ;; Custom Elements
    `(show-paren-match    ((t (:background ,sky-blue-lite))))
    `(show-paren-mismatch ((t (:background ,dusty-sage))))
@@ -100,7 +100,7 @@
    `(compilation-warning        ((t ,(list :foreground coffee-brown :bold t       :inherit 'unspecified))))
    `(compilation-mode-line-fail ((t ,(list :foreground bright-red   :weight 'bold :inherit 'unspecified))))
    `(compilation-mode-line-exit ((t ,(list :foreground fresh-green  :weight 'bold :inherit 'unspecified))))
-    
+
    ;; Header line
    `(header-line ((t (:background ,mode-line-background-active :foreground ,mode-line-foreground-active))))
 
@@ -121,7 +121,7 @@
 ;; to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 ;; copies of the Software, and to permit persons to whom the Software is
 ;; furnished to do so, subject to the following conditions:
-  
+
 ;; The above copyright notice and this permission notice shall be included in all
 ;; copies or substantial portions of the Software.
 
