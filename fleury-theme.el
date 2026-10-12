@@ -1,4 +1,4 @@
-;;; fleury-theme.el --- The fleury color theme
+;;; fleury-theme.el --- The fleury color theme  -*- lexical-binding: t; -*- 
 
 ;; Copyright (C) 2025 Shams Parvez Arka
 ;; See end of file for extended copyright information
@@ -108,8 +108,12 @@
    `(window-divider ((t (:background ,light-bronze :foreground ,light-bronze))))
    ))
 
-(provide-theme 'fleury)
+;;;###autoload
+(when load-file-name
+  (add-to-list 'custom-theme-load-path
+               (file-name-as-directory (file-name-directory load-file-name))))
 
+(provide-theme 'fleury)
 
 ;; MIT License
 
